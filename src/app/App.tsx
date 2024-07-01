@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
-import './App.css';
-// eslint-disable-next-line import/no-unresolved
 import UserModal from '@/features/user/components/UserModal';
+import Layout from '@/app/layout/Layout';
+import Header from '@/widgets/header/Header';
+import ProductCard from '@/widgets/ProductCard/ProductCard';
 
 function App() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -14,11 +14,35 @@ function App() {
     setModalOpen(false);
   };
   return (
-    <div className="App">
-      Hello Ubuntu
+    <Layout>
+      <Header />
       <button onClick={handleOpenModal}>Open Modal</button>
       <UserModal isOpen={modalOpen} onClose={handleCloseModal} />
-    </div>
+      <ProductCard
+        title="iPhone 15 Pro Max"
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        price={159.99}
+        image="https://www.gstatic.com/webp/gallery3/1.sm.png"
+      />
+      <ProductCard
+        title="iPhone 15 Pro Max"
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        price={159.99}
+        image="https://www.gstatic.com/webp/gallery3/1.sm.png"
+      />
+      <ProductCard
+        title="iPhone 15 Pro Max"
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        price={159.99}
+        image="https://www.gstatic.com/webp/gallery3/1.sm.png"
+      />
+      <ProductCard
+        title="iPhone 15 Pro Max"
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        price={159.99}
+        image="https://www.gstatic.com/webp/gallery3/1.sm.png"
+      />
+    </Layout>
   );
 }
 
